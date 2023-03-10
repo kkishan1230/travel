@@ -11,7 +11,11 @@
 :root {
   --PrimaryColor: hsl(199, 100%, 33%);
   --SecondaryColor: hsl(187, 85%, 43%);
-  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%));
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
@@ -36,6 +40,11 @@ li {
 
 .container {
   padding-inline: 1.5rem;
+}
+
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .flex {
@@ -63,7 +72,7 @@ li {
 }
 
 .btn:hover {
-  background-color: var(--SecondaryColor);
+  background: var(--SecondaryColor);
 }
 
 img,
@@ -72,9 +81,9 @@ video {
   height: auto;
 }
 
-input {
-  font-size: 100%;
-}
+/* input {
+  width: 100%;
+} */
 
 body {
   background-color: var(--bodyColor);
