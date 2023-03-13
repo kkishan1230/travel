@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./main.css";
 import img from "../../assets/img.jpg";
 import {
@@ -6,7 +6,13 @@ import {
   HiOutlineClipboardCheck,
 } from "react-icons/hi";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Main = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   const data = [
     {
       id: 1,
@@ -102,14 +108,16 @@ const Main = () => {
   return (
     <section className="main container section">
       <div className="secTitle">
-        <h3 className="title">Most visited destinations</h3>
+        <h3 data-aos="fade-right" className="title">
+          Most visited destinations
+        </h3>
       </div>
 
       <div className="secContent grid">
         {data.map(
           ({ id, imgSrc, destTitle, location, grade, fee, description }) => {
             return (
-              <div key={id} className="singleDestination">
+              <div data-aos="fade-up" key={id} className="singleDestination">
                 <div className="imgDiv">
                   <img src={img} alt={destTitle} />
                 </div>
